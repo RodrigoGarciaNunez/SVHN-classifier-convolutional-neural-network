@@ -59,9 +59,12 @@ def entrenar(elec):
         (train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
 
     else:
-        #carga svhn
-        train_images, train_labels = cargarMAT('train_32x32.mat')
-        test_images, test_labels = cargarMAT('test_32x32.mat')
+        try:
+            train_images, train_labels = cargarMAT('train_32x32.mat')
+            test_images, test_labels = cargarMAT('test_32x32.mat')
+        except Exception as exce:
+            print(f"Hubo un error al cargar los .mat\n {exce}")
+            return
 
     exploracion(train_images, train_labels, "entrenamiento")
 
@@ -177,5 +180,5 @@ if __name__ == "__main__":
         probar(modelo, x_test, test_labels, 2)
 
     else:
-        user_input = int(input("Eleige dataset (1 - cifar10, 2 - SVHN): "))
+        user_input = int(input("Elige dataset (1 - cifar10, 2 - SVHN): "))
         entrenar(user_input)

@@ -7,3 +7,6 @@ Para problemas de clasificación de imágenes, las redes convolucionales han pro
 Estos filtros actúan como detectores de características y son capaces de aprender automáticamente características importantes, como bordes, texturas, formas y patrones, a través del proceso de entrenamiento.
 
 Liga para obtener el dataset: http://ufldl.stanford.edu/housenumbers/
+
+
+![Example](images/example.png)
